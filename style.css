@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Barlow Semi Condensed;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    line-height: 1.4;
+    padding: 50px 30px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(214, 17%, 92%);
+}
+
+html{
+    font-size: 13px;    
+}
+
+.container{
+    width: 100%;
+    max-width: 1150px;
+    padding: 10px;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: 
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+    
+}
+.card{
+    padding: 30px;
+    box-shadow: 40px 40px 30px hsl(0, 0%, 81%);
+    border-radius: 10px;
+}
+.profile{
+    display: flex;
+}
+img{
+    border-radius: 100%;
+    width: 2rem;
+    outline: 2px solid hsl(264, 82%, 80%);
+    height: fit-content;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.details{
+    margin: 0 20px;
+}
+
+h2{
+    padding: 15px 0;
+}
+h4{
+    font-weight: 500;
+}
+
+.card:nth-child(1) {
+    grid-area: first;
+    background-color: hsl(263, 55%, 52%);
+}
+.card:nth-child(2) {
+    grid-area: second;
+    background-color: hsl(217, 19%, 35%);
+}
+.card:nth-child(5) {
+    grid-area: fifth;
+}
+.card:nth-child(3) {
+    grid-area: third;
+}
+.card:nth-child(5),
+.card:nth-child(3){
+    color: hsl(217, 19%, 35%);
+    background-color: hsl(0, 0%, 100%);
+}
+.card:nth-child(4){
+    grid-area: fourth;
+    background-color: hsl(219, 29%, 14%);
+}
+
+@media screen and (min-width: 550px){
+    .card:nth-child(1){
+        background-image: url(images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position: top right 50px;
+    }
+    .container{
+        grid-template-areas: 
+        "first first"
+        "second third"
+        "fifth  fifth"
+        "fourth fourth";
+    }
+    .card:nth-child(4){
+        z-index: 10;
+    }
+}
+@media screen and (min-width: 650px){
+    .container{
+        grid-template-areas: 
+        "first first"
+        "second fifth"
+        "third fifth"
+        "fourth fourth";
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .container{
+        grid-template-areas: 
+        "first first second"
+        "fifth  fifth fifth"
+        "third fourth fourth";
+    }
+    .card:nth-child(3){
+        z-index: 2;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .container{
+        grid-template-areas: 
+        "first first second fifth"
+        "third fourth fourth fifth";
+    }
+    .card:nth-child(5){
+        z-index: 10;
+    }
+}
